@@ -1,0 +1,66 @@
+#!/usr/bin/env bash
+
+installer() {
+  local install_type=$1
+  local version=$2
+  local install_path=$3
+
+  if [ "version" == "${install_type}" ]; then
+    install_version "$version" "$install_path"
+  else
+    install_ref "$version" "$install_path"
+  fi
+}
+
+install_version() {
+  local version=$1
+  local install_path=$2
+
+  local bin_install_path
+  bin_install_path="$install_path"/bin
+
+  local binary_path
+  binary_path="$bin_install_path"/brig
+
+  local tmp_download_dir
+  tmp_download_dir=$(mktemp -d -t brig_XXXXXXX)
+
+  local url
+  url=$(download_url "$version")
+
+  local download_path
+  download_path="$tmp_download_dir/brig-${version}"
+
+  echo "Downloading brig from ${url} to ${download_path}"
+  curl -Lo "$download_path" "$url"
+
+  echo "Creating bin directory"
+  mkdir -p "$bin_install_path"
+
+  echo "Cleaning previous binaries"
+  rm -f "$binary_path" 2>/dev/null || true
+
+  echo "Copying binary"
+  cp "$tmp_download_dir/brig-$version" "$binary_path"
+  chmod +x "$binary_path"
+}
+
+install_ref() {
+  echo "TODO: building from a ref is not yet supported"
+  exit 1
+}
+
+download_url() {
+  local version=$1
+  local platform
+  platform=$(uname -s | tr '[:upper:]' '[:lower:]')
+
+  if [ "$(uname -m)" != 'x86_64' ]; then
+    echo "ERROR: you're running a 32-bit processor. You'll need to find another solution."
+    exit 1
+  fi
+
+  echo "https://github.com/Azure/brigade/releases/download/${version}/brig-${platform}-amd64"
+}
+
+installer "$ASDF_INSTALL_TYPE" "$ASDF_INSTALL_VERSION" "$ASDF_INSTALL_PATH"
