@@ -32,7 +32,13 @@ install_version() {
   download_path="$tmp_download_dir/brig-${version}"
 
   echo "Downloading brig from ${url} to ${download_path}"
-  curl -Lo "$download_path" "$url"
+  curl -f -Lo "$download_path" "$url"
+
+  if test "$?" != "0"; then
+    rm -f "$download_path"
+    echo "ERROR: couldn't download version $version. Please ensure it's a valid release at https://github.com/Azure/brigade/releases"
+    exit 1
+  fi
 
   echo "Creating bin directory"
   mkdir -p "$bin_install_path"
