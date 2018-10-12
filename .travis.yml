@@ -10,5 +10,4 @@ before_script:
   - git clone https://github.com/asdf-vm/asdf.git asdf
   - . asdf/asdf.sh
 
-# TODO: change to https cloning once this is open sourced
-script: asdf plugin-test brig git@github.com:Ibotta/asdf-brig.git 'brig version'
+script: asdf plugin-test brig https://github.com:Ibotta/asdf-brig.git 'brig version'
