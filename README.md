@@ -1,8 +1,6 @@
 # asdf-brig
 
-[![Build Status](https://travis-ci.com/Ibotta/asdf-brig.svg?token=U9WnEGtz1HUCq7Lm4LVy&branch=master)](https://travis-ci.com/Ibotta/asdf-brig)
-
-[![Maintainability](https://api.codeclimate.com/v1/badges/2e39924f1409afa93128/maintainability)](https://codeclimate.com/repos/5bc0d04f44d54d30680073f6/maintainability)
+[![Build Status](https://travis-ci.com/Ibotta/asdf-brig.svg?branch=master)](https://travis-ci.com/Ibotta/asdf-brig)
 
 ## Installation
 
