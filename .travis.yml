@@ -10,4 +10,4 @@ before_script:
   - git clone https://github.com/asdf-vm/asdf.git asdf
   - . asdf/asdf.sh
 
-script: asdf plugin-test brig https://github.com:Ibotta/asdf-brig.git 'brig version'
+script: asdf plugin-test brig https://github.com/Ibotta/asdf-brig.git 'brig version'
