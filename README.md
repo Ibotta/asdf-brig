@@ -10,7 +10,7 @@ To use this plugin, first [install asdf](https://github.com/asdf-vm/asdf#setup).
 Then, install the plugin:
 
 ```console
-asdf plugin-add brig https://github.com/Ibotta/asdf-brig.git
+asdf plugin-add brig
 ```
 
 ## Usage
