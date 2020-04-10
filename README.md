@@ -50,7 +50,7 @@ that we mount through the code into the `plugins` directory for testing.
 
 ```console
 root@4f0d69e8bea6:/# asdf install brig v0.18.0
-Downloading brig from https://github.com/Azure/brigade/releases/download/v0.18.0/brig-linux-amd64 to /tmp/brig_Mi057PX/brig-v0.18.0
+Downloading brig from https://github.com/brigadecore/brigade/releases/download/v0.18.0/brig-linux-amd64 to /tmp/brig_Mi057PX/brig-v0.18.0
   % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
                                  Dload  Upload   Total   Spent    Left  Speed
 100   607    0   607    0     0   1653      0 --:--:-- --:--:-- --:--:--  1649
