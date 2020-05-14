@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 
-releases_path=https://api.github.com/repos/Azure/brigade/releases
+releases_path=https://api.github.com/repos/brigadecore/brigade/releases
 cmd="curl -s"
 if [ -n "$GITHUB_API_TOKEN" ]; then
   cmd="$cmd -H 'Authorization: token $GITHUB_API_TOKEN'"
@@ -17,7 +17,7 @@ function sort_versions() {
 # Versions below 0.16.0 did not consistently publish prebuilt `brig` versions
 # This function assumes anything higher than v0.16.0 will properly publish all
 # versions.
-# See https://github.com/Azure/brigade/releases for the canonical list of binaries
+# See https://github.com/brigadecore/brigade/releases for the canonical list of binaries
 function remove_old_versions() {
   awk -F. '{ if( substr($1, 2, length($1)) > 0 || ($1=="v0" && ($2==10 || $2==12 || ($2==13 && $3==0) || $2==14 || $2 >= 16))) print $0; }'
 }
