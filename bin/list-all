@@ -19,9 +19,9 @@ function sort_versions() {
 # versions.
 # See https://github.com/brigadecore/brigade/releases for the canonical list of binaries
 function remove_old_versions() {
-  awk -F. '{ if( substr($1, 2, length($1)) > 0 || ($1=="v0" && ($2==10 || $2==12 || ($2==13 && $3==0) || $2==14 || $2 >= 16))) print $0; }'
+  awk -F. '{ if( substr($1, 1, length($1)) > 0 || ($1=="0" && ($2==10 || $2==12 || ($2==13 && $3==0) || $2==14 || $2 >= 16))) print $0; }'
 }
 
 # Fetch all tag names, and get only second column. Then remove all unnecesary characters.
-versions=$(eval "$cmd" | grep -oE "tag_name\": \".{1,15}\"," | sed 's/tag_name\": \"//;s/\",//' | remove_old_versions | sort_versions)
-echo $versions
+# Also ripping off the 'v' prefix as it causes issues with 'asdf install foo latest'
+echo $(eval "$cmd" | grep -oE "tag_name\": \".{1,15}\"," | sed 's/tag_name\": \"v//;s/\",//' | remove_old_versions | sort_versions)
