@@ -13,7 +13,8 @@ installer() {
 }
 
 install_version() {
-  local version=$1
+  # Note that we're adding back the 'v' tag prefix.
+  local version=v$1
   local install_path=$2
 
   local bin_install_path
