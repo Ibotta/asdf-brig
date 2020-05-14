@@ -14,7 +14,10 @@ installer() {
 
 install_version() {
   # Note that we're adding back the 'v' tag prefix.
-  local version=v$1
+  local version=$1
+  if [[ ! $version =~ v ]]; then
+    version=v$1
+  fi
   local install_path=$2
 
   local bin_install_path
