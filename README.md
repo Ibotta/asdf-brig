@@ -1,6 +1,6 @@
 # asdf-brig
 
-[![Build Status](https://travis-ci.com/Ibotta/asdf-brig.svg?branch=master)](https://travis-ci.com/Ibotta/asdf-brig)
+[![GitHub Actions Status](https://github.com/ibotta/asdf-brig/workflows/Main%20workflow/badge.svg?branch=master)](https://github.com/ibotta/asdf-brig/actions)
 
 ## Installation
 
