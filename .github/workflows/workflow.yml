@@ -24,20 +24,20 @@ jobs:
       - name: asdf_plugin_test
         env:
           GITHUB_API_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-        uses: asdf-vm/actions/plugin-test@dd88cac
+        uses: asdf-vm/actions/plugin-test@dd88cacda735aadf625b889cbed3cd5923437af7
         with:
           command: brig version
       - name: asdf_plugin_test_with_v_prefix
         env:
           GITHUB_API_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-        uses: asdf-vm/actions/plugin-test@dd88cac
+        uses: asdf-vm/actions/plugin-test@dd88cacda735aadf625b889cbed3cd5923437af7
         with:
           version: v1.4.0
           command: brig version
       - name: asdf_plugin_test_without_v_prefix
         env:
           GITHUB_API_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-        uses: asdf-vm/actions/plugin-test@dd88cac
+        uses: asdf-vm/actions/plugin-test@dd88cacda735aadf625b889cbed3cd5923437af7
         with:
           version: 1.4.0
           command: brig version
