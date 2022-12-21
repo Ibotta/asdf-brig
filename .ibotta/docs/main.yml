@@ -1,0 +1,12 @@
+name: asdf-brig 
+type: asdf plugin 
+description: asdf plugin that installs brigade locally 
+owner:
+  name: Cloud Infrastructure
+  url: https://ibotta.atlassian.net/wiki/spaces/TT/pages/9962142/Cloud+Infrastructure
+nav:
+  - title: Plugin 
+    type: nav
+    children: 
+      - title: Overview
+        file: README.md
