@@ -1,0 +1,9 @@
+name: asdf-brig 
+type: tool 
+description: asdf plugin that installs brigade locally 
+nav:
+  - title: Plugin 
+    type: nav
+    children: 
+      - title: Overview
+        file: README.md
