@@ -1,5 +1,5 @@
 name: asdf-brig 
-type: asdf plugin 
+type: tool 
 description: asdf plugin that installs brigade locally 
 owner:
   name: Cloud Infrastructure
